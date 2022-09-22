@@ -26,18 +26,18 @@ function updatePhoneTotalPrice(newPhoneNumber){
     phoneTotalElement.innerText = phoneTotalPrice;
 
 }
+
+
 document.getElementById('btn-phn-plus').addEventListener('click',function(){
     const newPhoneNumber = updatePhoneNumber(true);
 updatePhoneTotalPrice(newPhoneNumber);
-   
+   calculateSubTotal();
 })
 
-/* calculation of phone total*/
-const phoneTotalElement = document.getElementById('phn-total');
-const currentPhoneTotalString = phoneTotalElement.innerText;
-const currentPhoneTotal = parseInt(currentPhoneTotalString);
+
 
 document.getElementById('btn-phn-minus').addEventListener('click',function(){
     const newPhoneNumber = updatePhoneNumber(false);
     updatePhoneTotalPrice(newPhoneNumber);
+    calculateSubTotal();
 })
